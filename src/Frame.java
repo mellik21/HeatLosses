@@ -80,7 +80,10 @@ public class Frame extends JFrame  {
         prog1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 panel.removeAll();
-                panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+                GroupLayout layout = new GroupLayout(panel);
+                layout.setAutoCreateGaps(true);
+                layout.setAutoCreateContainerGaps(true);
+                panel.setLayout(layout);
                 BufferedImage img1 = null;
                 try {
                     img1 = ImageIO.read(new File("src/res/example1.jpg"));
